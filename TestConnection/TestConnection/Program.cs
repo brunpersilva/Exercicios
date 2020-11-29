@@ -11,19 +11,18 @@ namespace TestConnection
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello World!");
+            Console.ReadKey();
+
             string connstring = "Data Source=ares\\sqlexpress;Initial Catalog=exercicio;Integrated Security=True";
 
             SqlConnection qry = new SqlConnection(connstring);
+            SqlCommand cmd = qry.CreateCommand();
 
             qry.Open();
-            string insert = "insert cliente (nome, idade, sexo) values ('Bruno', 25, 'M')";
-
-            SqlCommand cmd = new SqlCommand(insert, qry);
             
+            cmd.CommandText = "insert cliente (nome, idade, sexo) values ('Henrique', 26, 'M')";
             cmd.ExecuteNonQuery();
-
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
         }
     }
 }
