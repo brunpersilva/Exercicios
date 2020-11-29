@@ -8,15 +8,14 @@ namespace Ex1Danilo
         static void Main(string[] args)
         {
             Console.WriteLine("Calculo para pagamento de funcionarios");
-            Console.WriteLine("Digite quantos funcionarios deseja cadastrar: ");
+            Console.Write("Digite quantos funcionarios deseja cadastrar: ");
             int n = int.Parse(Console.ReadLine());
             List<Funcionario> list = new List<Funcionario>();
 
             for (int c = 1; c <= n; c++)
             {
-                Console.WriteLine("Funcionario #" + c);
-                Console.Write("Nome: ");
-                
+                Console.Write("Funcionario #" + c);
+                Console.Write("Nome: ");               
                 while (string.IsNullOrEmpty((Console.ReadLine())))
                 {   
                     Console.Write("Digite algo por favor: ");
